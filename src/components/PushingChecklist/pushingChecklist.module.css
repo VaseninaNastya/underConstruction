@@ -1,0 +1,11 @@
+.checklist{
+    display: flex;
+    flex-direction: column;
+}
+.secondaryChecklist{
+    margin-left: 30px;
+}
+.hidden{
+    visibility: hidden;
+    height: 0px;
+}
