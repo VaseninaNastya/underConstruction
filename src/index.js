@@ -14,7 +14,7 @@ import {addPushingCheckedElementChecklistAction} from './actions/pushingCheckedE
 const store = new createStore(rootRedusers);
         database.ref('/pushing/').once('value').then(
           res=>{
-            console.log('res.val()', res.val().actingElement);
+            // console.log('res.val()', res.val().actingElement);
           store.dispatch(addPushingActingElementChecklistAction(res.val().actingElement));
           store.dispatch(addPushingCheckedElementChecklistAction(res.val().checkedElement));
           }
