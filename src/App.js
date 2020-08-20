@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 import database from "./services/firebase";
-import PushingChecklist from './components/PushingChecklist';
+import MainPushingChecklist from './components/MainPushingChecklist';
 
 /*
 const buttonReducer = (state={},  action,)=>{
@@ -22,7 +22,7 @@ const buttonReducer = (state={},  action,)=>{
 function App() {
   return (
 
-<PushingChecklist/>
+<MainPushingChecklist/>
   );
 }
 

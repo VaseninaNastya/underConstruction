@@ -1,11 +1,13 @@
 .checklist{
     display: flex;
     flex-direction: column;
+    background-color: blue;
 }
 .secondaryChecklist{
     margin-left: 30px;
 }
-.hidden{
-    visibility: hidden;
-    height: 0px;
+.checked{
+    visibility: visible;
+    height: 100p;
+
 }
