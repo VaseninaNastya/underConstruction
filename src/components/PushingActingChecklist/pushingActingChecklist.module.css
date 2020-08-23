@@ -1,13 +1,39 @@
 .checklist{
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    width: 250px;
+
 }
-.secondaryChecklist{
-    margin-left: 30px;
-}
+
 .checked{
     visibility: visible;
     height: 100p;
+    background-color:#5e5e5e;
+}
+.radiobutton{
+    font-size: 20px;
+    height: 34px;
+    margin-left: 20px;
+    font-weight: 400;
+}
+.radiobutton__container{
+    width: 500px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.radiobutton__description{
+    visibility: hidden;
+    font-size: 20px;
+    font-weight: 100;
+}
+.radiobutton__container:hover .radiobutton__description{
+    visibility: visible;
+}
 
+
+.radiobutton__container:hover{
+    background-color: rgb(220, 238, 220);
+    cursor: default;
+    transition: 0.5s;
 }

@@ -13,11 +13,11 @@ class MainPushingChecklist extends React.Component{
 
     checkedCheckbox = (id) => {
         this.setState({selected:id})
-console.log(id);
+
     }
     render() {
 const {PushingCheckedElementChecklist } = this.props;
-console.log('PushingCheckedElementChecklist', PushingCheckedElementChecklist);
+
 if (Object.keys(PushingCheckedElementChecklist).length === 0){
     return(
         <div>
@@ -26,20 +26,25 @@ if (Object.keys(PushingCheckedElementChecklist).length === 0){
     )
 }
 
-console.log('this.props. пушинг чеклист', this.props);
+
 
         return(
-            <div>
+            <div className={s.checklist__container}>
                 {PushingCheckedElementChecklist.pushingCheckItems.map((item)=>{
                     return (
-                        <div   onClick={()=>this.checkedCheckbox(item.id)} className={s.checklist}>
-                            <div >{item.name}</div>
+                        
+                        <div   onClick={()=>this.checkedCheckbox(item.id)}>
+                            <div className={s.header}>
+                                <h2 className={s.title}>{item.name}</h2>
+                                <div className={s.title__dectription}>проверяемый элемент</div>
+                            </div>
                             { (item.id===this.state.selected) ?
                             <PushingActingChecklist 
                                 id={PushingCheckedElementChecklist.pushingCheckItems.id}
                                 />
                                 : null }
-                        </div>
+                            </div>
+
                     )
                 })
                 }

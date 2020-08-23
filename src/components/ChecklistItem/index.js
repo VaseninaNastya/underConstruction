@@ -1,50 +1,37 @@
 import React from 'react';
 import s from './ChecklistItem.module.css'
+import { RadioGroup, RadioButton } from 'react-radio-buttons';
 
-import { Checkbox } from 'antd';
+
+
 
 class ChecklistItem extends React.Component {
-    /*state = {
-        checked: false,
-        disabled: false,
-    };*/
-    
     render() {
-
-        const {  item} = this.props;
-return(
-                <div className={s.checklistItem}>
-
-                    <Checkbox
-                       /*checked={this.state.checked}
-                        disabled={this.state.disabled}
-                        onChange={this.onChange}*//>
-                    <label>
-                        <span>{ item }</span>
-                    </label>
-                </div>
-
-)
-}
+        const { id, name} = this.props;
+        console.log("item", typeof id.toString());
+    return(
+            <RadioButton value="1">
+                        { name }
+            </RadioButton>
+                    
+            )
+        }
 }
 
 export default ChecklistItem;
-
 /*
 
-{
-
-
-    <>
-            {PushingActingElementChecklist.map((item)=>{
-            return (
-                <>
-                    <label>
-                    <span>{ item }</span>
-                        <input/>
-                    </label>
-                </>
+class ChecklistItem extends React.Component {
+    render() {
+        const { id, name} = this.props;
+        console.log("item", typeof id.toString());
+    return(
+                    <RadioButton value={id.toString()}>
+                        { name }
+                    </RadioButton>
             )
-        })
-    }
-    </>*/
+        }
+}
+
+export default ChecklistItem;
+*/
