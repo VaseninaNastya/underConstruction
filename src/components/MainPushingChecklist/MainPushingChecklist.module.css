@@ -1,0 +1,40 @@
+.title{
+margin: 0px;
+
+    font-size: 24px;
+    font-weight: 500;
+    width: 250px;
+}
+.title__dectription{
+    width: 250px;
+    visibility: hidden;
+    font-size: 20px;
+    font-weight: 100;
+}
+.checklist__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header{
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 40px;
+    width: 500px;
+
+}
+.header:hover{
+    background-color: rgb(177, 206, 177);
+    cursor: default;
+    transition: 0.5s;
+}
+
+.header:hover .title__dectription{
+    visibility: visible;
+
+}
