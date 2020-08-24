@@ -1,11 +1,15 @@
 .title{
 margin: 0px;
-
+display: flex;
+height: 50px;
+padding-left: 5px;
     font-size: 24px;
     font-weight: 500;
-    width: 250px;
+    width: 295px;
+    align-items: center;
 }
 .title__dectription{
+    margin-left: 10px;
     width: 250px;
     visibility: hidden;
     font-size: 20px;
@@ -20,16 +24,15 @@ margin: 0px;
     margin-right: auto;
 }
 .header{
-    padding: 5px;
     display: flex;
     width: 100%;
     align-items: center;
-    height: 40px;
+    height: 50px;
     width: 500px;
 
 }
 .header:hover{
-    background-color: rgb(177, 206, 177);
+    background-color: rgb(234, 247, 234);
     cursor: default;
     transition: 0.5s;
 }
@@ -37,4 +40,8 @@ margin: 0px;
 .header:hover .title__dectription{
     visibility: visible;
 
+}
+.header:hover .title{
+    background-color: rgb(189, 214, 189);
+    transition: 0.5s;
 }

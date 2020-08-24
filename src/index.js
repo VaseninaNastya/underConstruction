@@ -9,7 +9,8 @@ import rootRedusers from './reducers'
 import database from './services/firebase'
 import {addPushingActingElementChecklistAction} from './actions/pushingActingElementActions'
 import {addPushingCheckedElementChecklistAction} from './actions/pushingCheckedElementActions'
-
+import {addPushingInitialDataAction} from './actions/pushingInitialDataActions'
+import {addConcreteGradeAction} from './actions/concreteGradeActions'
 
 const store = new createStore(rootRedusers);
         database.ref('/pushing/').once('value').then(
@@ -17,11 +18,15 @@ const store = new createStore(rootRedusers);
             // console.log('res.val()', res.val().actingElement);
           store.dispatch(addPushingActingElementChecklistAction(res.val().actingElement));
           store.dispatch(addPushingCheckedElementChecklistAction(res.val().checkedElement));
+          store.dispatch(addPushingInitialDataAction(res.val().initialData));
+          }
+        );
+        database.ref('/concreteGrade/').once('value').then(
+          res=>{
+            // console.log('res.val()', res.val().actingElement);
+          store.dispatch(addConcreteGradeAction(res.val().heavyWeightConcrete));
           }
         )
-
-
-
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>

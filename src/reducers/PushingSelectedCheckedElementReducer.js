@@ -1,18 +1,18 @@
 
-const PushingActingElementChecklistReducer = (state={},  action,)=>{
+const PushingSelectedCheckedElementReducer = (state={},  action,)=>{
     switch (action.type){
-        case 'ADD_PUSHING_ACTING_ELEMENT_CHECKLIST':
+        case 'PUSHING_SELECTED_CHECKED_ELEMENT':
             // console.log('action в редьюсере актинг элемент',action);
             return{
                 ...state,
-pushingCheckItems: action.payload
+pushingSelectedCheckedElement: action.payload
             }
         default: return state
     }
 }
 
 
-export default PushingActingElementChecklistReducer;
+export default PushingSelectedCheckedElementReducer;
 
 
 
