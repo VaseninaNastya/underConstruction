@@ -1,9 +1,7 @@
 import React from 'react';
-
 import './App.css';
-import database from "./services/firebase";
-import MainPushingChecklist from './components/MainPushingChecklist';
-
+import PushingChecklistPage from './pages/pushingChecklist'
+import PushingInitialData from './components/PushingInitialData'
 /*
 const buttonReducer = (state={},  action,)=>{
     switch (action.type){
@@ -21,8 +19,11 @@ const buttonReducer = (state={},  action,)=>{
 
 function App() {
   return (
-
-<MainPushingChecklist/>
+    <>
+    
+      <PushingInitialData/>
+      <PushingChecklistPage/>
+    </>
   );
 }
 

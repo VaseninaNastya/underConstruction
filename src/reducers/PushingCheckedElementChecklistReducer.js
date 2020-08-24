@@ -6,7 +6,7 @@ const PushingCheckedElementChecklistReducer = (state={},  action,)=>{
             // console.log('action в редьюсере чекед элемент',action);
             return{
                 ...state,
-pushingCheckItems: action.resultForStore
+pushingCheckItems: action.payload
             }
         default: return state
     }

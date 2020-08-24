@@ -1,18 +1,18 @@
 
-const PushingActingElementChecklistReducer = (state={},  action,)=>{
+const ConcreteGradeReducer = (state={},  action,)=>{
     switch (action.type){
-        case 'ADD_PUSHING_ACTING_ELEMENT_CHECKLIST':
+        case 'ADD_CONCRETE_GRADE':
             // console.log('action в редьюсере актинг элемент',action);
             return{
                 ...state,
-pushingCheckItems: action.payload
+                ConcreteGrade: action.payload
             }
         default: return state
     }
 }
 
 
-export default PushingActingElementChecklistReducer;
+export default ConcreteGradeReducer;
 
 
 

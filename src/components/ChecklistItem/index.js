@@ -3,7 +3,7 @@ import s from './ChecklistItem.module.css'
 import { RadioGroup, RadioButton } from 'react-radio-buttons';
 
 
-
+/*не используется*/ 
 
 class ChecklistItem extends React.Component {
     render() {
@@ -19,19 +19,3 @@ class ChecklistItem extends React.Component {
 }
 
 export default ChecklistItem;
-/*
-
-class ChecklistItem extends React.Component {
-    render() {
-        const { id, name} = this.props;
-        console.log("item", typeof id.toString());
-    return(
-                    <RadioButton value={id.toString()}>
-                        { name }
-                    </RadioButton>
-            )
-        }
-}
-
-export default ChecklistItem;
-*/

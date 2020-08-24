@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import {connect} from 'react-redux';
 import {bindActionCreators} from "redux";
 import {addPushingActingElementChecklistAction} from '../../actions/pushingActingElementActions';
-import { RadioGroup, RadioButton } from 'react-radio-buttons';
 import { Radio } from 'antd';
+import { pushingSelectedActingElementtAction } from '../../actions/pushingSelectedActingElementActions';
 
 
 class PushingActingChecklist extends React.Component{
@@ -15,11 +15,13 @@ class PushingActingChecklist extends React.Component{
 
     updateRadioButton = (e) => {
         this.setState({value: e.target.value,});
+        this.props.pushingSelectedActingElement(e.target.value)
     };
 
     render() {
-        console.log('стейт в актингчеклист', this.state);
+
 const { PushingActingElementChecklist} = this.props;
+
 if (Object.keys(PushingActingElementChecklist).length === 0){
     return(
         <div>
@@ -32,19 +34,18 @@ const secondaryChecklist = classNames(s.checklist );
 
 return (
     <div className={s.radiobutton__container}>
-    <Radio.Group className={secondaryChecklist}  onChange={this.updateRadioButton} value={this.state.value}>
-    {PushingActingElementChecklist.pushingCheckItems.map((item)=>{
+        <Radio.Group size="large" className={secondaryChecklist}  onChange={this.updateRadioButton} value={this.state.value}>
+            {PushingActingElementChecklist.pushingCheckItems.map((item)=>{
                             return (
-                                    <Radio className={s.radiobutton} value={item.id.toString()}>
+                                    <Radio className={s.radiobutton} value={item.id}>
                                         {item.name}
                                     </Radio>
                                 )
                             })
                         }
-
         </Radio.Group>
         <div className={s.radiobutton__description}>воздействующий элемент</div>
-                                    </div>
+    </div>
 )
     }
 }
@@ -57,6 +58,7 @@ const mapStateToProps =(state)=>{
 const mapDispatchToProps =(dispatch)=>{
     return bindActionCreators({
         addPushingActingElementChecklist: addPushingActingElementChecklistAction,
+        pushingSelectedActingElement: pushingSelectedActingElementtAction,
     }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(PushingActingChecklist);

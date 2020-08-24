@@ -1,8 +1,7 @@
 .checklist{
     display: flex;
     flex-direction: column;
-    width: 250px;
-
+    width: 300px;
 }
 
 .checked{
@@ -11,21 +10,24 @@
     background-color:#5e5e5e;
 }
 .radiobutton{
-    font-size: 20px;
+    font-size: 20px!important;
     height: 34px;
     margin-left: 20px;
     font-weight: 400;
+    display: flex!important;
+    align-items: center;
+    font-size: 20px;
 }
 .radiobutton__container{
     width: 500px;
     display: flex;
     align-items: center;
-    font-size: 16px;
 }
 .radiobutton__description{
     visibility: hidden;
     font-size: 20px;
     font-weight: 100;
+    margin-left: 10px;
 }
 .radiobutton__container:hover .radiobutton__description{
     visibility: visible;
@@ -33,7 +35,12 @@
 
 
 .radiobutton__container:hover{
-    background-color: rgb(220, 238, 220);
+    background-color: rgb(234, 247, 234);
     cursor: default;
     transition: 0.5s;
 }
+
+.radiobutton__container:hover .checklist{
+
+    background-color: rgb(220, 238, 220);
+    transition: 0.5s;}
