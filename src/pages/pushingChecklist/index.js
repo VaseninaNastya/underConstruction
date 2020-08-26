@@ -4,21 +4,21 @@ import { Layout, Form, Input, Button } from 'antd';
 import MainPushingChecklist from '../../components/MainPushingChecklist';
 import classNames from 'classnames';
 import {connect} from 'react-redux';
-
+import { Checkbox } from 'antd';
 const { Content } = Layout;
 
 class PushingChecklistPage extends React.Component {
     onFinish = values => {
-        console.log('Success:', values);
+
     };
     onFinishFailed = (errorMsg) => {
-        console.log("####: errorMsg", errorMsg);
+
     }
 
     render(){
 
         const secondaryChecklist = classNames(s.checklist );
-        console.log("####стор", this.props);
+
         return(
             <Layout
             >
@@ -32,9 +32,21 @@ class PushingChecklistPage extends React.Component {
                             onFinishFailed={this.onFinishFailed}
                         >
                         <Form.Item>
-                            <Button size="large" type="primary" htmlType="submit">
-                                Перейти к расчету
-                            </Button>
+                                <Checkbox className={s.checkbox__label} size="large">
+                                    стена/колонна у края плиты
+                                </Checkbox>
+                        </Form.Item>
+                        <Form.Item>
+                                <Checkbox className={s.checkbox__label} size="large">
+                                    есть капитель
+                                </Checkbox>
+                        </Form.Item>
+                        <Form.Item>
+                            <div className={s.checkbox__button}>
+                                <Button size="large" type="primary" htmlType="submit">
+                                    Перейти к расчету
+                                </Button>
+                            </div>
                         </Form.Item>
                     </Form>  
                         </div>
@@ -45,7 +57,6 @@ class PushingChecklistPage extends React.Component {
     }
 }
 const mapStateToProps =(state)=>{
-    console.log('стор в пейдж', state);
     return {
         ...state,
     }
