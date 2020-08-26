@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import PushingChecklistPage from './pages/pushingChecklist'
-import PushingInitialData from './components/PushingInitialData'
+import PushingCalculation  from './components/PushingCalculation'
+import ReinforcementGrade from './components/ReinforcementGrade'
+import ConcreteGrade from './components/ConcreteGrade';
 /*
 const buttonReducer = (state={},  action,)=>{
     switch (action.type){
@@ -20,8 +22,7 @@ const buttonReducer = (state={},  action,)=>{
 function App() {
   return (
     <>
-    
-      <PushingInitialData/>
+      <PushingCalculation/>
       <PushingChecklistPage/>
     </>
   );

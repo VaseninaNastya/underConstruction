@@ -8,7 +8,6 @@ import { RadioGroup, RadioButton } from 'react-radio-buttons';
 class ChecklistItem extends React.Component {
     render() {
         const { id, name} = this.props;
-        console.log("item", typeof id.toString());
     return(
             <RadioButton value="1">
                         { name }

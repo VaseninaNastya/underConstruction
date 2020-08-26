@@ -11,11 +11,12 @@ import {addPushingActingElementChecklistAction} from './actions/pushingActingEle
 import {addPushingCheckedElementChecklistAction} from './actions/pushingCheckedElementActions'
 import {addPushingInitialDataAction} from './actions/pushingInitialDataActions'
 import {addConcreteGradeAction} from './actions/concreteGradeActions'
+import {addReinforcementGradeAction} from './actions/reinforcementGradeActions'
 
 const store = new createStore(rootRedusers);
         database.ref('/pushing/').once('value').then(
           res=>{
-            // console.log('res.val()', res.val().actingElement);
+
           store.dispatch(addPushingActingElementChecklistAction(res.val().actingElement));
           store.dispatch(addPushingCheckedElementChecklistAction(res.val().checkedElement));
           store.dispatch(addPushingInitialDataAction(res.val().initialData));
@@ -23,8 +24,14 @@ const store = new createStore(rootRedusers);
         );
         database.ref('/concreteGrade/').once('value').then(
           res=>{
-            // console.log('res.val()', res.val().actingElement);
+
           store.dispatch(addConcreteGradeAction(res.val().heavyWeightConcrete));
+          }
+        );
+        database.ref('/reinforcementGrade/').once('value').then(
+          res=>{
+
+          store.dispatch(addReinforcementGradeAction(res.val()));
           }
         )
 ReactDOM.render(

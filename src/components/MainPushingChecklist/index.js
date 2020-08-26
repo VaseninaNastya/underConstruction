@@ -27,7 +27,6 @@ if (Object.keys(PushingCheckedElementChecklist).length === 0){
 }
 
 
-console.log('стейт в мейнчеклист', this.state)
         return(
 
             <div className={s.checklist__container}>

@@ -5,6 +5,7 @@ import PushingSelectedActingElementReducer from './PushingSelectedActingElementR
 import PushingSelectedCheckedElementReducer from './PushingSelectedCheckedElementReducer'
 import PushingInitialDataReducer from './PushingInitialDataReducer'
 import ConcreteGradeReducer from './ConcreteGradeReducer'
+import ReinforcementGradeReducer from './ReinforcementGradeReducer'
 
 export default combineReducers({
     PushingActingElementChecklist: PushingActingElementChecklistReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
     PushingSelectedActingElement: PushingSelectedActingElementReducer,
     PushingSelectedCheckedElement: PushingSelectedCheckedElementReducer,
     PushingInitialData: PushingInitialDataReducer,
-    ConcreteGrade: ConcreteGradeReducer
+    ConcreteGrade: ConcreteGradeReducer,
+    ReinforcementGrade: ReinforcementGradeReducer,
 })
