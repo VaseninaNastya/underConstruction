@@ -24,3 +24,7 @@
 .checkbox__button{
     margin-left: 70px;
 }
+.checkbox__labelHidden{
+    visibility: hidden;
+    height: 0px;
+}
