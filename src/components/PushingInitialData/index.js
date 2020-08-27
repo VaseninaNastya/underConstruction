@@ -21,6 +21,7 @@ class PushingInitialData extends React.Component{
         const { PushingInitialData} = this.props;
         const SelectedActingElement = this.props.PushingSelectedActingElement.pushingSelectedActingElement;
         const SelectedCheckedElement = this.props.PushingSelectedCheckedElement.pushingSelectedCheckedElement;
+        const ColumnCapitalChecked = this.props.PushingСolumnСapital.PushingСolumnСapital
         if (Object.keys( PushingInitialData).length === 0||
         SelectedActingElement==undefined||
         SelectedCheckedElement==undefined){
@@ -30,12 +31,9 @@ class PushingInitialData extends React.Component{
                 </div>
             )
         }
-        console.log('пропсы в исходных данных', this.props.PushingSelectedActingElement.pushingSelectedActingElement);
-        console.log('пропсы в исходных данных', this.props.PushingSelectedCheckedElement.pushingSelectedCheckedElement);
         return(
             <>
                 {PushingInitialData.pushingInitialData.map((item)=>{
-                    console.log("idchecked", item.idChecked)
                     if (item.idChecked.indexOf(SelectedCheckedElement)>-1 && 
                     item.idActing.indexOf(SelectedActingElement)>-1)
                     {
@@ -51,6 +49,15 @@ class PushingInitialData extends React.Component{
                                     <ReinforcementGrade placeholder={item.example}/>
                                     <div className={s.input__description}>{item.name}</div>
                                 </div>
+                                )
+                            case 135:
+                                return(
+                                    ColumnCapitalChecked?
+                                    <div className={s.input__container}>
+                                    <Input  size="large"  placeholder={item.example} className={s.input}/>
+                                    <div className={s.input__description}>{item.name}</div>
+                                    </div>
+                                    :null
                                 )
                             default: return(
                                 <div className={s.input__container}>
