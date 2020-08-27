@@ -35,34 +35,30 @@ class PushingInitialData extends React.Component{
         return(
             <>
                 {PushingInitialData.pushingInitialData.map((item)=>{
-                    switch (item.id){
-                        case 115:
-                            return(
-                                <div className={s.input__container}><ConcreteGrade placeholder={item.example}/>
-                                <div className={s.input__description}>{item.name}</div></div>
-                            )
-                        case 121:
-                            return(
+                    console.log("idchecked", item.idChecked)
+                    if (item.idChecked.indexOf(SelectedCheckedElement)>-1 && 
+                    item.idActing.indexOf(SelectedActingElement)>-1)
+                    {
+                        switch (item.id){
+                            case 115:
+                                return(
+                                    <div className={s.input__container}><ConcreteGrade placeholder={item.example}/>
+                                    <div className={s.input__description}>{item.name}</div></div>
+                                )
+                            case 121:
+                                return(
+                                    <div className={s.input__container}>
+                                    <ReinforcementGrade placeholder={item.example}/>
+                                    <div className={s.input__description}>{item.name}</div>
+                                </div>
+                                )
+                            default: return(
                                 <div className={s.input__container}>
-                            <ReinforcementGrade placeholder={item.example}/>
-                                <div className={s.input__description}>{item.name}</div>
-                            </div>
+                                    <Input  size="large"  placeholder={item.example} className={s.input}/>
+                                    <div className={s.input__description}>{item.name}</div>
+                                </div>
                             )
-                        case 138:
-                            return(
-                                SelectedCheckedElement==22
-                                ? null
-                                :<div className={s.input__container}>
-                                <Input  size="large"  placeholder={item.example} className={s.input}/>
-                                <div className={s.input__description}>{item.name}</div>
-                            </div>
-                            )
-                        default: return(
-                            <div className={s.input__container}>
-                                <Input  size="large"  placeholder={item.example} className={s.input}/>
-                                <div className={s.input__description}>{item.name}</div>
-                            </div>
-                        )
+                        }
                     }
                 })
                 }
