@@ -6,7 +6,7 @@ import {addPushingCheckedElementChecklistAction} from '../../actions/pushingChec
 import PushingActingChecklist from '../PushingActingChecklist';
 import { pushingSelectedCheckedElementActions } from '../../actions/pushingSelectedCheckedElementActions';
 
-
+import { Spin } from 'antd';
 
 class MainPushingChecklist extends React.Component{
     state = {selected:null}
@@ -20,8 +20,8 @@ const {PushingCheckedElementChecklist } = this.props;
 
 if (Object.keys(PushingCheckedElementChecklist).length === 0){
     return(
-        <div>
-            Идет загрузка
+        <div className={s.spin}>
+            <Spin />
         </div>
     )
 }
@@ -35,7 +35,6 @@ if (Object.keys(PushingCheckedElementChecklist).length === 0){
                         
                         <div   onClick={()=>this.checkedCheckbox(item.id)}>
                             <div className={s.header}>
-                                
                                 <h2 className={s.title}>{item.name}</h2>
                                 <div className={s.title__dectription}>проверяемый элемент</div>
                             </div>

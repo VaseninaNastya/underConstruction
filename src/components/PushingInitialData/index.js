@@ -27,7 +27,7 @@ class PushingInitialData extends React.Component{
         SelectedCheckedElement==undefined){
             return(
                 <div>
-                    Идет загрузка
+                    Проверяемые и воздействующие элементы не выбраны
                 </div>
             )
         }

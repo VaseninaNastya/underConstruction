@@ -45,3 +45,9 @@ padding-left: 5px;
     background-color: rgb(189, 214, 189);
     transition: 0.5s;
 }
+.spin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
