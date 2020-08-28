@@ -13,6 +13,9 @@ import {addPushingInitialDataAction} from './actions/pushingInitialDataActions'
 import {addConcreteGradeAction} from './actions/concreteGradeActions'
 import {addReinforcementGradeAction} from './actions/reinforcementGradeActions'
 
+
+
+
 const store = new createStore(rootRedusers);
         database.ref('/pushing/').once('value').then(
           res=>{
