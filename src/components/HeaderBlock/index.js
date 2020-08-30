@@ -8,7 +8,6 @@ const HeaderBlock = ({hideBackground=false, children}) => {
     return (
         <div className={s.cover} style={styleCover}>
             <div className={s.wrap}>
-
                 {children}
             </div>
         </div>

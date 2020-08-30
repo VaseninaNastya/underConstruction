@@ -14,16 +14,6 @@ class PushingChecklistPage extends React.Component {
     state={
         selectedActingElenemtColunm: false
     }
-    
-    /*componentDidMount(){
-        const actingElenemtColunm = this.props.PushingSelectedActingElement.pushingSelectedActingElement;
-        if((actingElenemtColunm==undefined)/*||
-            (actingElenemtColunm==undefined)){
-            console.log("if работает");
-            this.setState({selectedActingElenemtColunm: false})
-            console.log('selectedActingElenemtColunm',this.state.selectedActingElenemtColunm);
-        }
-    }*/
     onFinish = values => {
 
     };
@@ -106,17 +96,3 @@ const mapDispatchToProps =(dispatch)=>{
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(PushingChecklistPage);
-
-
-
-/* onChange={this.updateCheckedElement}
-console.log('работает чекбакс', this.props);
-        const actingElenemtColunm = this.props.PushingSelectedActingElement.pushingSelectedActingElement;
-        console.log('actingElenemtColunm', actingElenemtColunm );
-        if(actingElenemtColunm==113||114){
-            console.log("if работает");
-            this.setState({selectedActingElenemtColunm: true})
-            console.log('selectedActingElenemtColunm',this.state.selectedActingElenemtColunm);
-        }
-
-*/

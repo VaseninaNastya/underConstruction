@@ -1,19 +1,49 @@
 import React from "react";
 import s from "./login.module.css"
 import { Layout, Form, Input, Button } from 'antd';
-import { fire } from "../../services/firebase";
+import FirebaseContext from '../../context/firebaseContext';
 
+//import { fire , Firebase} from "../../services/firebase";
+import { withFirebase } from '../../context/firebaseContext';
 const { Content } = Layout;
 
 class LoginPage extends React.Component {
     onFinish = ({email, password}) => {
-        fire
-            .auth()
-            .signInWithEmailAndPassword(email, password)
-            .then(res =>{
-                console.log('res', res)
+
+        console.log('context', this.context);
+
+        const {signWithEmailAndPassword,  createUserWithEmailAndPassword, setUserUid }=this.context
+        signWithEmailAndPassword(email, password)
+        .then(
+            (res)=>{
+                setUserUid(res.user.uid);                    
+                localStorage.setItem('user',res.user.uid);
+                localStorage.setItem('email',res.user.email);
+                this.props.history.push('/');
+            }
+        )
+        .catch(
+            (err) => {
+                if (err.code === 'auth/invalid-email') {
+                    alert('Неверный email');
+                }
+                if (err.code === 'auth/user-not-found') {
+                    if (window.confirm('Зарегистрировать email ' + email + '?')) {
+                        // Save it!
+                        createUserWithEmailAndPassword(email, password)
+                            .catch((err) => { alert(err) })
+                            .then(alert('Email ' + email + ' успешно зарегистрирован'))
+                    }
+                }
+                if (err.code === 'auth/too-many-requests') alert('Слишком много попыток входа')
+
+                if (err.code === 'auth/wrong-password') {
+                    alert('Неверный пароль');
+                } else {
+                    console.log(err)
+                }
             })
-    }
+        }
     onFinishFailed = (errorMsg) => {
         console.log("####: errorMsg", errorMsg);
     }
@@ -54,7 +84,7 @@ class LoginPage extends React.Component {
                                 </Form.Item>
                                 <Form.Item {...tailLayout}>
                                     <Button type="primary" htmlType="submit">
-                                        Submit
+                                        Вход
                                     </Button>
                                 </Form.Item>
                             </Form>
@@ -65,8 +95,8 @@ class LoginPage extends React.Component {
         );
     }
 }
-
-export default LoginPage;
+LoginPage.contextType = FirebaseContext;
+export default withFirebase(LoginPage)
 
 
 

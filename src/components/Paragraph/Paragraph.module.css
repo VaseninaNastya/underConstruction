@@ -1,7 +1,12 @@
 .paragraph {
-    color      : white;
+    color      : rgb(212, 217, 219);
     padding    : 15px 0 30px 0;
-    font-size  : 20px;
+    font-size  : 24px;
+    font-weight: 600;
     line-height: 1.55;
 }
 
+.paragraph:hover{
+    color:white;
+    cursor: default;
+}
