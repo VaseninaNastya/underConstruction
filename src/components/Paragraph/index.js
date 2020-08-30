@@ -6,7 +6,7 @@ import s from "./Paragraph.module.css";
 const Paragraph = ({ children}) => {
 
     return (
-    <p className="s.paragraph">{children}</p>
+    <p className={s.paragraph}>{children}</p>
     )
 }
 

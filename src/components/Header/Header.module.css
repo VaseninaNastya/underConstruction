@@ -1,8 +1,11 @@
 
     .header {
         font-size     : 68px;
-        color         : white;
+        color: rgb(212, 217, 219);
         padding       : 24px 0;
         letter-spacing: 1px;
     }
-
+.header:hover{
+    color: white;
+    cursor: default;
+}
